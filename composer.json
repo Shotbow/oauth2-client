@@ -1,0 +1,20 @@
+{
+  "name": "shotbow/oauth2-client",
+  "description": "OAuth2 Client for Interacting with the Shotbow API",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Navarr Barnier",
+      "email": "me@navarr.me"
+    }
+  ],
+  "require": {
+    "league/oauth2-client": "~1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Shotbow\\OAuth2\\": "src/"
+    }
+  }
+}
