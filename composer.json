@@ -1,5 +1,8 @@
 {
-  "name": "shotbow/oauth2-client",
+  "name": "shotbow/oauth2-shotbow",
+  "replace": {
+    "shotbow/oauth2-client": "self.version"
+  },
   "description": "OAuth2 Client for Interacting with the Shotbow API",
   "minimum-stability": "stable",
   "license": "MIT",
