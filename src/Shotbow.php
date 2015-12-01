@@ -9,6 +9,23 @@ use Psr\Http\Message\ResponseInterface;
 
 class Shotbow extends AbstractProvider
 {
+    /** Basic User Information - Required Scope */
+    const SCOPE_BASIC = 'basic';
+
+    /** User's Email Address */
+    const SCOPE_EMAIL = 'email';
+
+    /** User's ban status & reason */
+    const SCOPE_BANNED = 'ban';
+
+    /** Player's online status, current server, and coordinates */
+    const SCOPE_LOCATION = 'location';
+
+    /** Player's Permission Groups */
+    const SCOPE_RANK = 'rank';
+
+    /** Player Report API */
+    const SCOPE_REPORT = 'report';
 
     private function getBaseOAuthUrl()
     {
@@ -50,7 +67,7 @@ class Shotbow extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return $this->getBaseOAuthUrl() . '/me?access_token='.$token;
+        return $this->getBaseOAuthUrl() . '/me?access_token=' . $token;
     }
 
     /**
@@ -96,5 +113,11 @@ class Shotbow extends AbstractProvider
     protected function createResourceOwner(array $response, AccessToken $token)
     {
         return new ShotbowPlayer($response);
+    }
+
+    /** @inheritdoc */
+    public function getScopeSeparator()
+    {
+        return ' ';
     }
 }
