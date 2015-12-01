@@ -100,7 +100,7 @@ class ShotbowPlayer implements ResourceOwnerInterface
      */
     protected function hasScope($scope)
     {
-        return array_key_exists('email', $this->attributes['scopes']);
+        return array_key_exists($scope, $this->attributes['scopes']);
     }
 
     /**
