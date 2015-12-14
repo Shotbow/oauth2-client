@@ -1,6 +1,6 @@
 <?php
 
-require_once('../vendor/autoload.php');
+require_once '../vendor/autoload.php';
 
 session_start();
 
@@ -18,7 +18,7 @@ if (!isset($_GET['code'])) {
     $_SESSION['oauth2state'] = $provider->getState();
     session_write_close();
 
-    header('Location: ' . $authUrl);
+    header('Location: '.$authUrl);
 } elseif (empty($_GET['state']) || $_GET['state'] !== $_SESSION['oauth2state']) {
     unset($_SESSION['oauth2state']);
     exit('Invalid State');
@@ -32,5 +32,3 @@ if (!isset($_GET['code'])) {
 
     var_export($resourceOwner->toArray());
 }
-
-
