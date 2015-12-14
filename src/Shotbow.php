@@ -1,4 +1,5 @@
 <?php
+
 namespace Shotbow\OAuth2;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
@@ -55,7 +56,7 @@ class Shotbow extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->getBaseOAuthUrl() . '/access_token';
+        return $this->getBaseOAuthUrl().'/access_token';
     }
 
     /**
@@ -67,7 +68,7 @@ class Shotbow extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return $this->getBaseOAuthUrl() . '/me?access_token=' . $token;
+        return $this->getBaseOAuthUrl().'/me?access_token='.$token;
     }
 
     /**
@@ -86,10 +87,11 @@ class Shotbow extends AbstractProvider
     /**
      * Checks a provider response for errors.
      *
-     * @throws IdentityProviderException
      *
-     * @param  ResponseInterface $response
-     * @param  array|string      $data Parsed response data
+     * @param ResponseInterface $response
+     * @param array|string      $data     Parsed response data
+     *
+     * @throws IdentityProviderException
      *
      * @return void
      */
@@ -105,8 +107,8 @@ class Shotbow extends AbstractProvider
      * Generates a resource owner object from a successful resource owner
      * details request.
      *
-     * @param  array       $response
-     * @param  AccessToken $token
+     * @param array       $response
+     * @param AccessToken $token
      *
      * @return ResourceOwnerInterface
      */
@@ -115,7 +117,7 @@ class Shotbow extends AbstractProvider
         return new ShotbowPlayer($response);
     }
 
-    /** @inheritdoc */
+    /** {@inheritdoc} */
     public function getScopeSeparator()
     {
         return ' ';
