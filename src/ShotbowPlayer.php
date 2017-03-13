@@ -46,6 +46,7 @@ class ShotbowPlayer implements ResourceOwnerInterface
     const RANK_PRIVILEGE_DEPLOYMENT_ADMIN = '199';
     const RANK_STAFF_FILMCREW = '193';
     const RANK_PRIVILEGE_SLAUGHTER = '190';
+    const RANK_PRIVILEGE_LOBBY = '220';
 
 
     /** @var array */
