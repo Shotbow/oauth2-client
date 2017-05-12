@@ -10,6 +10,7 @@ class ShotbowPlayer implements ResourceOwnerInterface
     const RANK_APPEARANCE_ADMINISTRATOR = '172';
     const RANK_PRIVILEGE_ANNIHILATION = '133';
     const RANK_STAFF_BAC = '34';
+    const RANK_STAFF_PR = '223';
     const RANK_REVOCATION_BANNED = '166';
     const RANK_REVOCATION_APPEAL = '40';
     const RANK_BIG_SPENDER = '37';
